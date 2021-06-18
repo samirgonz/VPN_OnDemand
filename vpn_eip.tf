@@ -1,6 +1,6 @@
 # Create EIP
 resource "aws_eip" "vpn_eip" {
-  vpc = true
+  vpc        = true
   depends_on = [aws_internet_gateway.vpn_igw]
 
 }

@@ -1,5 +1,5 @@
 resource "aws_network_acl" "vpn_nacl" {
-  vpc_id = aws_vpc.vpn_vpc.id
+  vpc_id     = aws_vpc.vpn_vpc.id
   subnet_ids = [aws_subnet.vpn_subnet.id]
 
   egress {
