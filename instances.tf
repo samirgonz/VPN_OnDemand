@@ -1,6 +1,20 @@
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners = ["amazon"] 
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu*20*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
 resource "aws_instance" "vpn_instance" {
-  ami           = "ami-0aeeebd8d2ab47354"
-  instance_type = "t2.micro"
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = var.vpn_instance_type
   key_name      = "a4l"
 
   network_interface {
