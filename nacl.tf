@@ -51,7 +51,7 @@ resource "aws_network_acl" "vpn_nacl" {
     action     = "allow"
     cidr_block = "0.0.0.0/0"
     from_port  = 8
-    to_port    = -1
+    to_port    = 8
   }
 
   tags = {
