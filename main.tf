@@ -6,6 +6,14 @@ terraform {
       version = "3.46.0"
     }
   }
+
+  backend "remote" {
+    organization = "samirgonz"
+
+    workspaces {
+      name = "VPN_OnDemand"
+    }
+  }
 }
 
 provider "aws" {
