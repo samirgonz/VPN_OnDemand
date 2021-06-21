@@ -18,6 +18,6 @@ terraform {
 
 provider "aws" {
   region     = var.availability_zone_names
-  # access_key = var.vpn_access_key
-  # secret_key = var.vpn_secret_key
+  access_key = $access_key
+  secret_key = $secret_key
 }
