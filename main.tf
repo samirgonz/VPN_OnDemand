@@ -7,15 +7,14 @@ terraform {
     }
   }
 
-  backend "remote" {
+   backend "remote" {
     organization = "samirgonz"
 
     workspaces {
       name = "VPN_OnDemand"
     }
   }
-}
-
+ }
 provider "aws" {
   region     = var.availability_zone_names
   access_key = var.vpn_access_key
