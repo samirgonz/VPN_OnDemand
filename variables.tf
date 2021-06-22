@@ -27,7 +27,7 @@ variable "vpn_access_key" {
   type        = string
 }
 
-variable "vpn_security_key" {
-  description = "Security Key"
+variable "vpn_secret_key" {
+  description = "Secret Key"
   type        = string
 }
