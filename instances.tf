@@ -1,10 +1,10 @@
-data "aws_ami" "ubuntu" {
+/* data "aws_ami" "ubuntu" {
   most_recent = true
   owners      = ["amazon"]
 
   filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu*20*"]
+    name   = "image-id"
+    values = ["ami-09e67e426f25ce0d7"]
   }
 
   filter {
@@ -12,8 +12,9 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 }
-resource "aws_instance" "vpn_instance" {
-  ami           = data.aws_ami.ubuntu.id
+ */resource "aws_instance" "vpn_instance" {
+  # ami           = data.aws_ami.ubuntu.id
+  ami           = "ami-09e67e426f25ce0d7"
   instance_type = var.vpn_instance_type
   key_name      = "a4l"
 
